@@ -1,5 +1,7 @@
 package algorithm;
 
+import static utils.IteratorArray.iteratorArray;
+
 /**
  * Created by QrCeric on 19/02/2017.
  * 给定数字, 回行填入数组
@@ -71,16 +73,7 @@ public class ArrayIterator {
         return ints;
     }
 
-    public static void iteratorArray(int[][] ints) {
 
-//        System.out.println(JSON.toJSONString(ints));
-        for (int i = 0; i < ints.length; i++) {
-            for (int j = 0; j < ints[i].length; j++) {
-                System.out.print(ints[i][j] + "\t");
-            }
-            System.out.println("\r\n");
-        }
-    }
 }
 
 
