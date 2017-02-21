@@ -16,6 +16,8 @@ public class SwapArray {
             int temp = x[i];
             x[i] = x[j];
             x[j] = temp;
+        } else {
+            System.out.println(i + ":" + j);
         }
     }
 }

@@ -3,11 +3,11 @@ package utils;
 /**
  * Created by QrCeric on 20/02/2017.
  */
-public class RandomArray {
+public class RandomUtil {
 
     public static void main(String[] args) {
 
-        IteratorArray.iteratorArray(newRandomArray());
+        IteratorUtil.iteratorFor(newRandomArray());
     }
 
     public static int[] newRandomArray() {

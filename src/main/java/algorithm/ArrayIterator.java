@@ -1,6 +1,8 @@
 package algorithm;
 
-import static utils.IteratorArray.iteratorArray;
+import utils.IteratorUtil;
+
+import static utils.IteratorUtil.iteratorArray;
 
 /**
  * Created by QrCeric on 19/02/2017.
@@ -17,7 +19,7 @@ public class ArrayIterator {
         int[][] result = iteratorNumber(num);
         System.out.println("Duration: " + (System.nanoTime() - startTime) + "\r\n");
 
-        iteratorArray(result);
+        IteratorUtil.iteratorFor(result);
     }
 
     public static int[][] iteratorNumber(int num) {
