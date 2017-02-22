@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Created by QrCeric on 21/02/2017.
+ * 阿拉伯数字转为中文数字
  * 方法有点笨, 有空再优化吧
  */
 public class IntToString {
