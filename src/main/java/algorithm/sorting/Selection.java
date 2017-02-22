@@ -2,7 +2,7 @@ package algorithm.sorting;
 
 import utils.IteratorUtil;
 import utils.RandomUtil;
-import utils.SwapArray;
+import utils.SwapUtil;
 
 /**
  * Created by QrCeric on 21/02/2017.
@@ -15,11 +15,11 @@ public class Selection {
         int[] x = RandomUtil.newRandomArray();
 
         IteratorUtil.iteratorFor(x);
-        IteratorUtil.iteratorFor(sort(x));
+        IteratorUtil.iteratorFor(selectionSort(x));
 
     }
 
-    public static int[] sort(int[] x) {
+    public static int[] selectionSort(int[] x) {
 
         int l = x.length;
 
@@ -31,7 +31,7 @@ public class Selection {
                 }
             }
             if (min != i) {
-                SwapArray.Swap(x, i, min);
+                SwapUtil.swap(x, i, min);
             }
         }
 

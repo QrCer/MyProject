@@ -2,7 +2,6 @@ package algorithm;
 
 import utils.IteratorUtil;
 
-import static utils.IteratorUtil.iteratorArray;
 
 /**
  * Created by QrCeric on 19/02/2017.

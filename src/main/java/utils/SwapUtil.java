@@ -3,13 +3,13 @@ package utils;
 /**
  * Created by QrCeric on 20/02/2017.
  */
-public class SwapArray {
+public class SwapUtil {
 
     public static void main(String[] args) {
 
     }
 
-    public static void Swap(int[] x, int i, int j) {
+    public static void swap(int[] x, int i, int j) {
         int l = x.length;
 
         if (i < l && j < l) {
