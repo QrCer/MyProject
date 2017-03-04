@@ -1,11 +1,48 @@
 package designpattern.singleton;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * Created by QrCeric on 24/02/2017.
+ * 1    278748225   222985368
+ * 2    315071043   236798184
+ * 3    211576802   151572011
+ * 4    255780777   225158519
+ * 5    158290415   120128879
+ * 6    195020542   129446022
+ * 7    269716341   351986426
+ * 8    151209568   131235834
  */
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+//        testALL();
+        testConcurrent();
+    }
+
+    public static void testConcurrent() throws InterruptedException {
+
+        ExecutorService executorService = Executors.newCachedThreadPool();
+
+        Long start = System.nanoTime();
+        List<Runnable> list = new ArrayList<>(100);
+        for (int i=0;i<100;i++){
+            list.add(new InitSingleton());
+        }
+        for (int i=0;i<100;i++) {
+            executorService.execute(list.get(i));
+        }
+        executorService.shutdown();
+        Long end = System.nanoTime();
+
+        Thread.sleep(1000);
+        System.out.println("time is: "+(end-start));
+    }
+
+    public static void testALL(){
         Singleton1 singleton1A = Singleton1.getInstance();
         Singleton1 singleton1B = Singleton1.getInstance();
         System.out.println(singleton1A == singleton1B);
@@ -40,5 +77,14 @@ public class Test {
         singleton8A.method();
         singleton8B.method();
         singleton8A.method();
+    }
+
+    public static class InitSingleton implements Runnable{
+
+        @Override
+        public void run() {
+            Singleton6 singleton = Singleton6.getInstance();
+            System.out.println(singleton);
+        }
     }
 }
