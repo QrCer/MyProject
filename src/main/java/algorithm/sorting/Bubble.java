@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+ */
+
 package algorithm.sorting;
 
 import utils.IteratorUtil;
@@ -10,19 +14,16 @@ import utils.SwapUtil;
  */
 public class Bubble {
 
-
-    public static void main(String[] args) {
-
-        int[] x = RandomUtil.newRandomArray();
-
-        IteratorUtil.iteratorFor(x);
-
-        IteratorUtil.iteratorFor(bubbleSort(x));
-
-    }
-
+    /**
+     * Method bubbleSort ... <br/>
+     * .
+     * @param x
+     * .
+     * @return int[]
+     * .
+     * @author ........Dong.Qirui
+     */
     public static int[] bubbleSort(int[] x) {
-
         int l = x.length;
 
         for (int i = 0; i < l - 1; i++) {
@@ -34,5 +35,19 @@ public class Bubble {
         }
 
         return x;
+    }
+
+    /**
+     * Method main ... <br/>
+     * .
+     * @param args
+     * .
+     * @author ........Dong.Qirui
+     */
+    public static void main(String[] args) {
+        int[] x = RandomUtil.newRandomArray();
+
+        IteratorUtil.iteratorFor(x);
+        IteratorUtil.iteratorFor(bubbleSort(x));
     }
 }

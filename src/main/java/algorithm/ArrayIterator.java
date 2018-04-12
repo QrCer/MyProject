@@ -1,7 +1,10 @@
+/*  
+ * Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+ */
+
 package algorithm;
 
 import utils.IteratorUtil;
-
 
 /**
  * Created by QrCeric on 19/02/2017.
@@ -10,33 +13,28 @@ import utils.IteratorUtil;
  */
 public class ArrayIterator {
 
-    public static void main(String[] args) {
-
-        int num = 225;   //定义数字长度
-
-        long startTime = System.nanoTime();
-        int[][] result = iteratorNumber(num);
-        System.out.println("Duration: " + (System.nanoTime() - startTime) + "\r\n");
-
-        IteratorUtil.iteratorFor(result);
-    }
-
+    /**
+     * Method iteratorNumber ... <br/>
+     * .
+     * @param num
+     * .
+     * @return int[][]
+     * .
+     * @author ........Dong.Qirui
+     */
     public static int[][] iteratorNumber(int num) {
+        int n = (int) Math.sqrt(num);    // 求正方形数组大小
 
-        int n = (int) Math.sqrt(num);   //求正方形数组大小
-        if (num != n * n) {     //如果不是正方形,返回空
+        if (num != n * n) {    // 如果不是正方形,返回空
             return null;
         }
-        int[][] ints = new int[n][n];   //初始化数组
 
-        int number = 0;     //初始值
-
-        int start = 0;      //开始填入数值的行
-        int end = n - 1;    //开始填入数值的列
-
+        int[][] ints   = new int[n][n];    // 初始化数组
+        int     number = 0;                // 初始值
+        int     start  = 0;                // 开始填入数值的行
+        int     end    = n - 1;            // 开始填入数值的列
 
         while (number < num) {
-
             int step = 0;
 
             for (step = 0; step < n - 1; step++) {
@@ -57,6 +55,7 @@ public class ArrayIterator {
 
             start++;
             end--;
+
             if (n > 2) {
                 n -= 2;
             } else {
@@ -67,14 +66,29 @@ public class ArrayIterator {
                 if (number >= num) {
                     break;
                 }
+
                 ints[start][end] = ++number;
+
                 break;
             }
         }
+
         return ints;
     }
 
+    /**
+     * Method main ... <br/>
+     * .
+     * @param args
+     * .
+     * @author ........Dong.Qirui
+     */
+    public static void main(String[] args) {
+        int     num       = 36;    // 定义数字长度
+        long    startTime = System.nanoTime();
+        int[][] result    = iteratorNumber(num);
 
+        System.out.println("Duration: " + (System.nanoTime() - startTime) + "\r\n");
+        IteratorUtil.iteratorFor(result);
+    }
 }
-
-

@@ -1,3 +1,7 @@
+/*  
+ * Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+ */
+
 package designpattern.singleton;
 
 /**
@@ -6,20 +10,34 @@ package designpattern.singleton;
  */
 public class Singleton2 {
 
+    /**
+     * Field instance ... <br/>
+     */
     private static Singleton2 instance = null;
-
-    private Singleton2() {
-    }
 
     static {
         instance = new Singleton2();
     }
 
+    /**
+     * Constructor Singleton2 ... <br/>
+     * ------------------------------------
+     */
+    private Singleton2() {
+    }
+
+    /**
+     * Method getInstance ... <br/>
+     * .
+     * @return Singleton2
+     * .
+     * @author ........Dong.Qirui
+     */
     public static Singleton2 getInstance() {
         if (null == instance) {
             instance = new Singleton2();
         }
+
         return instance;
     }
-
 }
